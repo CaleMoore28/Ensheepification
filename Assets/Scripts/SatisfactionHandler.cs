@@ -22,6 +22,7 @@ public class SatisfactionHandler : MonoBehaviour
 
         HashSet<Attribute> attributes = new HashSet<Attribute>();
 
+        bool forbiddenAttributes = false;
 
         foreach (PartData part in parts)
         {
@@ -41,6 +42,10 @@ public class SatisfactionHandler : MonoBehaviour
             {
                 attributes.Add(part.attribute);
             }
+            else if (ticket.unwantedAttributes.Contains(part.attribute))
+            {
+                forbiddenAttributes = true;
+            }
         }
 
         Assert.LessOrEqual(correctTags.Count, ticket.tags.Length);
@@ -48,8 +53,14 @@ public class SatisfactionHandler : MonoBehaviour
 
         float tagScore = Mathf.Max(correctTags.Count - extraTags.Count, 0.0f) / (float)ticket.tags.Length;
         float attributeScore = attributes.Count / (float)ticket.requiredAttributes.Length;
+        float forbiddenScore = 1.0f;
+        
+        if (forbiddenAttributes)
+        {
+            forbiddenScore = 0.5f;
+        }
 
-        customerSatisfactionScore += tagScore * attributeScore;
+        customerSatisfactionScore += tagScore * attributeScore * forbiddenScore;
 
         completedTickets++;
     }
