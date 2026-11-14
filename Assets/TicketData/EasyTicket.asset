@@ -18,3 +18,4 @@ MonoBehaviour:
     a basic head, body, legs, and horns.'
   tags:
   - Basic
+  requiredAttributes: 00000000010000000200000003000000
