@@ -53,6 +53,7 @@ MonoBehaviour:
   moneyText: {fileID: 8289989454615237287}
   dayText: {fileID: 7344240837240630766}
   shiftTimer: {fileID: 2665463993546873707}
+  interactPrompt: {fileID: 2316345942793728653}
   moneyManager: {fileID: 0}
   shiftManager: {fileID: 0}
 --- !u!1 &2316345942793728653
@@ -572,6 +573,7 @@ RectTransform:
   - {fileID: 2203291269171923170}
   - {fileID: 6462287286417978198}
   - {fileID: 3296814360291565260}
+  - {fileID: 947387879763232931}
   m_Father: {fileID: 5067169906864119275}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
