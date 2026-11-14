@@ -109,6 +109,9 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
 #Random useless setting files 
-.vscode/extenstions.json
+.vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
+/projectSettings/VisualScriptingSettings.asset
+/projectSettings/ShaderGraphSettings.asset
+/projectSettings/EditorBuildSettings.asset
