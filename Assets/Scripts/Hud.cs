@@ -8,6 +8,7 @@ public class Hud : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI dayText;
     [SerializeField] private Image shiftTimer;
+    [SerializeField] private GameObject interactPrompt;
 
     [Header("Dependencies")]
     [SerializeField] private MoneyManager moneyManager;
@@ -33,6 +34,11 @@ public class Hud : MonoBehaviour
     public void SetDay(int day)
     {
         dayText.text = "Day " + day.ToString();
+    }
+
+    public void ToggleInteractPrompt(bool toggle)
+    {
+        interactPrompt.SetActive(toggle);
     }
 
     private void UpdateMoney(int amount)
