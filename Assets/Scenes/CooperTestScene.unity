@@ -1189,8 +1189,8 @@ MonoBehaviour:
   ticketDisplay: {fileID: 0}
   dayOneTickets:
   - {fileID: 11400000, guid: b7e0b83b9385ce548851664d9bd735e2, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 450bb763f3414e24da380c893f4af664, type: 2}
+  - {fileID: 11400000, guid: 079f3911b895c3947b319a1adda01fb3, type: 2}
   dayTwoTickets: []
   dayThreeTickets: []
   dayFourTickets: []
