@@ -550,6 +550,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2665463993546873707, guid: d7ff2fce7bd883042bd37a5809c7297b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7754988575891523622, guid: 01acc18d17230a9469f1977a2d9d3492, type: 3}
+    - target: {fileID: 2665463993546873707, guid: d7ff2fce7bd883042bd37a5809c7297b, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5067169906864119275, guid: d7ff2fce7bd883042bd37a5809c7297b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
