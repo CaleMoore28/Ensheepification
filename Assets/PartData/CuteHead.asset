@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239b0de194e0be14bb815a62bcd5e3ec, type: 3}
   m_Name: CuteHead
   m_EditorClassIdentifier: Assembly-CSharp::PartData
-  partName: Cute Head
+  partName: head_cute
   cost: 20
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 0}
