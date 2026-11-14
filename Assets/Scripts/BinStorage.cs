@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.Cinemachine;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,26 +12,61 @@ public class BinStorage : MonoBehaviour
 
     private GameObject selectedMeat;
 
-    [SerializeField] GameObject meatZone;
+    [SerializeField] private GameObject meatZone;
 
-    [SerializeField] LayerMask meatZoneLayer;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask meatMask;
+
+    [SerializeField] private float meatCarryHeight = 0.2f;
+
+    [SerializeField] Camera cinemachineCamera;
+
+    [Header("Dependencies")]
+    [SerializeField] SheepManager sheepManager;
+
+    private bool buttonWasJustPressed = false;
 
     public void SelectMeat()
     {
+        Debug.Log("Meat Selected");
         meatIsSelected = true;
         selectedMeat = Instantiate(partData.partPrefab, Vector3.zero, Quaternion.identity);
+
+        buttonWasJustPressed = true;
+        StartCoroutine(ButtonCooldown());
+    }
+
+    IEnumerator ButtonCooldown()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        buttonWasJustPressed = false;
     }
 
     private void Update()
     {
-        if (meatIsSelected && Mouse.current.leftButton.isPressed)
+        if (meatIsSelected)
         {
             Vector3 mouse = Mouse.current.position.ReadValue();
-            mouse = Camera.main.ScreenToWorldPoint(mouse);
-            selectedMeat.transform.position = mouse;
-        }
 
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
+            Ray ray = cinemachineCamera.ScreenPointToRay(mouse);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                if (hit.collider.gameObject.tag == "TableZone")
+                {
+                    Vector3 temp = hit.point + new Vector3(0, meatCarryHeight, 0);
+                    selectedMeat.transform.position = temp;
+                }
+            }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (meatIsSelected && Mouse.current.leftButton.wasPressedThisFrame && !buttonWasJustPressed)
         {
             meatIsSelected = false;
 
@@ -42,7 +79,25 @@ public class BinStorage : MonoBehaviour
 
     private void CheckIfInMeatZone()
     {
-        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit raycastHit, 100f, meatZoneLayer);
-    }
+        Vector3 mouse = Mouse.current.position.ReadValue();
 
+        Ray ray = cinemachineCamera.ScreenPointToRay(mouse);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            Debug.Log(hit.collider.gameObject);
+            
+
+            if (hit.collider.gameObject.name == "MeatZone")
+            {
+                sheepManager.AddPart(selectedMeat.GetComponent<PartData>());
+            }
+            else
+            {
+                Debug.Log("Meat failure");
+            }
+        }
+    }
 }
