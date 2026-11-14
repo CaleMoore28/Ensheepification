@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015e99d2efd49c04a9de3db5e1d53f59, type: 3}
   m_Name: EasyTicket
   m_EditorClassIdentifier: Assembly-CSharp::TicketData
-  prompt: 'Hi Doll-E!
+  prompt: '@Doll-E,
 
-    I''d like one basic sheep please! Just a basic sheep with
+    Generate me one basic sheep please! Just a basic sheep with
     a basic head, body, legs, and horns.'
   tags:
   - Basic

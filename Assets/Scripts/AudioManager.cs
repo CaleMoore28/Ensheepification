@@ -5,9 +5,7 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance;
     public static AudioManager Instance { get { return instance; } }
 
-    [SerializeField] private AudioSource effectSource;
-
-    private float effectVolume;
+    private float effectVolume = 1.0f;
 
 
     private void Start()
@@ -23,8 +21,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayEffect(AudioClip effectClip)
+    public void PlayEffect(AudioSource effectSource, AudioClip effectClip)
     {
+        Debug.Log("PLAYING");
         effectSource.PlayOneShot(effectClip, effectVolume);
     }
 
