@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] MoneyManager moneyManager;
+    [SerializeField] private MoneyManager moneyManager;
+    [SerializeField] private ShiftManager shiftManager;
+    [SerializeField] private AnnouncementHandler announcementHandler;
+    [SerializeField] private Hud hud;
+    [SerializeField] private ScoreReportHandler reportHandler;
 
     private int day = 1;
     public int Day { get { return day; } }
@@ -23,18 +27,48 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        moneyManager.OnBankrupt += OnBankrupt;
-        StartDay();
+        announcementHandler.ShowAnnouncement(day);
+        announcementHandler.OnAnnouncementAcknowledged += StartDay;
     }
 
     private void StartDay()
     {
+        announcementHandler.OnAnnouncementAcknowledged -= StartDay;
+
+        moneyManager.OnBankrupt += OnBankrupt;
+        shiftManager.OnShiftOver += OnShiftOver;
+
         moneyManager.SetBudget(dailyBudget[Day]);
+        shiftManager.StartShift();
+
+        hud.SetDay(day);
+
+        hud.ToggleHud(true);
     }
+    
 
     private void OnBankrupt()
     {
+        moneyManager.OnBankrupt -= OnBankrupt;
+        shiftManager.OnShiftOver -= OnShiftOver;
+
         Debug.Log("You Lose!");
+    }
+
+    private void OnShiftOver()
+    {
+        moneyManager.OnBankrupt -= OnBankrupt;
+        shiftManager.OnShiftOver -= OnShiftOver;
+
+        reportHandler.ShowScoreReport();
+        reportHandler.OnLevelAdvance += ProgressDay;
+    }
+
+    private void ProgressDay()
+    {
+        day++;
+        announcementHandler.ShowAnnouncement(day);
+        announcementHandler.OnAnnouncementAcknowledged += StartDay;
     }
 
 }
