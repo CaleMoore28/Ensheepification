@@ -13,18 +13,18 @@ public class BinLogic : MonoBehaviour
 
     public void ChangeBinState()
     {
-        binManager.NormalizeBinList();
+        Debug.Log("Registered Bin Button Press");
 
         if (binIsOpen)
         {
             CloseBins();
         }
-        else
-        {
-            OpenBins();
-        }
 
-        binManager.ChangeOpenBinStatus(gameObject)
+        binManager.NormalizeBinList();
+        
+        OpenBins();
+
+        binManager.ChangeOpenBinStatus(gameObject);
     }
 
     private void OpenBins()
