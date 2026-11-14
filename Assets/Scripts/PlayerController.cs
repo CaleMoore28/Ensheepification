@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float mouseSensitivity = 1.0f;
-    [SerializeField] private Camera playerCamera;
+    [SerializeField] private CinemachineCamera playerCamera;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Hud hud;
 
@@ -59,6 +60,8 @@ public class PlayerController : MonoBehaviour
     public void ToggleMovement(bool toggle)
     {
         isMovementEnabled = toggle;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnMove(InputValue inputValue)
@@ -82,7 +85,7 @@ public class PlayerController : MonoBehaviour
             
             if (interactable != null)
             {
-                interactable.Interact();
+                interactable.Interact(this);
             }
         }
     }
