@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
 
     private bool paused;
+    public bool Paused { get { return paused; } }
 
 
     private void Start()
