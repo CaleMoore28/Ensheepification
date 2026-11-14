@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 1331455607}
   - component: {fileID: 1331455606}
   m_Layer: 5
-  m_Name: get to work
+  m_Name: get-to-work
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
