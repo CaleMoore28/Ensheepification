@@ -92,7 +92,7 @@ public class BinStorage : MonoBehaviour
 
             if (hit.collider.gameObject.name == "MeatZone")
             {
-                sheepManager.AddPart(selectedMeat.GetComponent<PartData>());
+                sheepManager.AddPart(selectedMeat.GetComponent<PartManager>().partDataScriptableObject);
             }
             else
             {
