@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AnnouncementHandler announcementHandler;
     [SerializeField] private Hud hud;
     [SerializeField] private ScoreReportHandler reportHandler;
+    [SerializeField] private TicketManager ticketManager;
 
     [SerializeField] private PromptGenerator promptGenerator;
 
@@ -49,6 +50,7 @@ public class LevelManager : MonoBehaviour
 
         moneyManager.SetBudget(dailyBudget[Day]);
         shiftManager.StartShift();
+        ticketManager.SetDay(day);
 
         hud.SetDay(day);
 
