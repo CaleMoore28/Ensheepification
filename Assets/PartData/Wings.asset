@@ -19,4 +19,5 @@ MonoBehaviour:
   attribute: 0
   tags:
   - Wings
+  - Fantastical
   mesh: {fileID: 2364506203564376859, guid: e0fd47df5f2e04e449f77649ebb41dd5, type: 3}
