@@ -51,15 +51,6 @@ public class LevelManager : MonoBehaviour
 
     
     }
-    
-
-    private void OnBankrupt()
-    {
-        moneyManager.OnBankrupt -= OnBankrupt;
-        shiftManager.OnShiftOver -= OnShiftOver;
-
-        Debug.Log("You Lose!");
-    }
 
     private void OnShiftOver()
     {
@@ -70,7 +61,6 @@ public class LevelManager : MonoBehaviour
         if (day != 3){
             reportHandler.OnLevelAdvance += ProgressDay;
         }else{
-            reportHandler.OnLevelAdvance += OnGameOver;
             GameManager.Instance.MountScene("FinalCutscene");
         }
 
@@ -78,8 +68,9 @@ public class LevelManager : MonoBehaviour
 
     private void OnBankrupt()
     {
-        reportHandler.OnLevelAdvance -= OnGameOver;
-        GameManager.Instance.Bankrupt= true;
+        moneyManager.OnBankrupt -= OnBankrupt;
+        shiftManager.OnShiftOver -= OnShiftOver;
+        GameManager.Instance.bankrupt= true;
         GameManager.Instance.MountScene("FinalCutscene");
 
     }
