@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -60,8 +59,6 @@ public class SatisfactionHandler : MonoBehaviour
             }
         }
 
-        Assert.LessOrEqual(correctTags.Count, ticket.requiredTags.Count);
-        Assert.LessOrEqual(attributes.Count, ticket.requiredAttributes.Count);
 
         float tagScore = Mathf.Max(correctTags.Count - extraTags.Count, 0.0f) / (float)ticket.requiredTags.Count;
         float attributeScore = attributes.Count / (float)ticket.requiredAttributes.Count;
