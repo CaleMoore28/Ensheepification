@@ -638,6 +638,7 @@ MonoBehaviour:
   hud: {fileID: 1913695280454783280}
   reportHandler: {fileID: 1983750070935617152}
   ticketManager: {fileID: 1532285766}
+  playerController: {fileID: 1375264968}
   attributes:
   - horns
   - small
@@ -3344,6 +3345,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 909272591923699790, guid: 383a31ebe09dc674cbc1b5f19a28f6b6, type: 3}
   m_PrefabInstance: {fileID: 8122472654157324447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1375264968 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6415510531638675024, guid: 383a31ebe09dc674cbc1b5f19a28f6b6, type: 3}
+  m_PrefabInstance: {fileID: 8122472654157324447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca20cd69da7d404c9dd14254752dfe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!224 &1385919884 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 469298408927945316, guid: 534e5159ab0b82845874494d44da7f01, type: 3}
