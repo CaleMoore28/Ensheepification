@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,8 @@ public class SheepManager : MonoBehaviour, Interactable
     [SerializeField] private float heldSize = 0.33f;
 
     [SerializeField] private BoxCollider boxCollider;
+
+    [SerializeField] private GameObject sheepResetOffset;
 
     private void Start()
     {
@@ -47,7 +50,11 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             print("sheep child?");
             GameObject player = GameObject.FindWithTag("Player");
-            transform.parent = player.transform;
+            Debug.Log("Player object is " + player);
+            GameObject cameraPos = player.GetComponentInChildren<Testing>().gameObject;
+            Debug.Log("cameraPos " + cameraPos);
+            transform.parent = cameraPos.transform;
+            //transform.parent = player.transform;
         }
         this.gameObject.layer = default;
     }
@@ -71,6 +78,13 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             PartData bodyPartData = bodyPart.GetComponent<PartManager>().partDataScriptableObject;
 
+            Debug.Log("BodyPartData is " + bodyPartData);
+
+            if (bodyPartData == null)
+            {
+                continue;
+            }
+
             //Head
             if (bodyPartData.attribute == Attribute.HEAD)
             {
@@ -88,7 +102,7 @@ public class SheepManager : MonoBehaviour, Interactable
             }
         }
 
-        if (necessaryPartCounter == 3)
+        if (necessaryPartCounter >= 3)
         {
             ReadyToCook();
         }
@@ -126,5 +140,8 @@ public class SheepManager : MonoBehaviour, Interactable
         spin.hasChangedSpinState = false;
 
         gameObject.transform.localScale = Vector3.one;
+
+        transform.parent = null;
+        transform.position = sheepResetOffset.transform.position;
     }
 }

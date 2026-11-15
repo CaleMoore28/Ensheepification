@@ -112,8 +112,3 @@ InitTestScene*.unity*
 .vscode/extensions.json
 .vscode/launch.json
 .vscode/settings.json
-/projectSettings/VisualScriptingSettings.asset
-/projectSettings/ShaderGraphSettings.asset
-/projectSettings/EditorBuildSettings.asset
-/Assets/BlenderModels/*.meta
-/Assets/2D_assets/*.meta
