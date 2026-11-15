@@ -124,7 +124,7 @@ MonoBehaviour:
   m_text: Press E To Interact
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
-  m_sharedMaterial: {fileID: -8588493618028016102, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
+  m_sharedMaterial: {fileID: 8984472603865893244, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_text: Day X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
-  m_sharedMaterial: {fileID: -8588493618028016102, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
+  m_sharedMaterial: {fileID: 8984472603865893244, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_text: $0000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
-  m_sharedMaterial: {fileID: -8588493618028016102, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
+  m_sharedMaterial: {fileID: 8984472603865893244, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

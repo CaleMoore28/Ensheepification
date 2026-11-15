@@ -8,26 +8,33 @@ public class TicketManager : MonoBehaviour
     [SerializeField] private TicketDisplay ticketDisplay;
     [Header("Tickets By Day")]
 
-    // format is prompt, attribute number, tag number
+    // format is prompt, number of attributes, number of tags
+    // tags: cute, evil, fluffy, basic, [corrupted]
+    // attributes: horns, wings, tails
     [SerializeField] private object[,] dayOneTickets =
     {
-        {"Generate me a sheep that feels like a $tag hug!", 0, 1},
-        {"Doll-E, I want a %tag sheep, with $attribute.", 1, 1},
-        {"Prompt 1: $attribute $tag", 1, 1},
+        {"Doll-E, give me a sheep with a $tag $attribute.", 1, 1},      
+        {"PROMPT: Generate a sheep with $attribute attribute and $tag tag", 1, 1},
+        {"Generate me a sheep that is $tag enough for me to hang with after a long day.!", 0, 1},
     };
     [SerializeField] private object[,] dayTwoTickets=
     {
+        {"Doll-E!!! I want a $tag sheep with a $tag $attribute.", 1, 2},
         {"Generate me a sheep that feels like a $tag hug!", 0, 1},
-        {"Doll-E, I want a %tag sheep, with $attribute.", 1, 1},
-        {"Prompt 1: $attribute $tag", 1, 1},
+        {"Generate me a sheep that reminds me of my incredibly $tag coworker Carl. Give it a $attribute.", 1, 1}
+        //{"Prompt: Generate a sheep with $attribute attribute and $tag tag", 1, 1},
     };
-    [SerializeField] private object[,] dayThreeTickets=
+    [SerializeField] object[,] dayThreeTickets=
     {
-        // {"Generate me a sheep that I can give my $tag boyfriend. Make me a sheep that says “wrap me up in your big, $tag arms.” But make sure it’s not too nice or I can’t dump him next year." 
-        //     , 0, 2},
-        // {"SheepGPT, generate me a sheep with rogue-like elements, make it $tag, and spit on it.", 0, 1},
-        // {"Prompt 1: $attribute $tag", 1, 1},
+        {"@Grok generate me a sheep that I can give my $tag boyfriend. Make a sheep that says “wrap me up in your big, $tag arms.” But make sure it’s not too nice or I can’t dump him next year." 
+            , 0, 2},
+        {"Doll-E!!! I need a sheep with rogue-like elements, make it $tag, and spit on it.", 0, 1},
+        {"I want a sheep with a $tag $attribute enough to keep the monsters guessing!", 1, 1},
+        //{"Prompt: Generate a sheep with $attribute attribute and $tag tag", 1, 1},
+        {"Generate me a sheep that is so $tag that it will intimidate a bear with one, $tag stare.", 0, 1}
     };
+
+    [SerializeField] string[] tags = {"cute", "evil", "basic", "fluffy", "chill", "fantastical", "old-fashioned", "baazarrre", "hdkjdkfjejufiop", "Quirked Up White Boy"};
 
     [SerializeField] private Ticket currentTicket;
 
@@ -55,6 +62,10 @@ public class TicketManager : MonoBehaviour
         promptGenerator.promptOptions = SetTicketQueue(day);
         promptGenerator.GenerateTicket();
         ticketDisplay.DisplayTicketData(currentTicket);
+        if (day = 3)
+        {
+            currentTicket.setTags(tags);
+        }
     }
 
     public void NextTicket()
