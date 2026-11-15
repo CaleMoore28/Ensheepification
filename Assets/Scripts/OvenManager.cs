@@ -15,7 +15,7 @@ public class OvenManager : MonoBehaviour, Interactable
     {
         print("interact with Oven");
         GameObject player = GameObject.FindWithTag("Player");
-        sheep = player.transform.GetChild(1).gameObject;
+        sheep = player.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
         if (sheep && !SheepInOven){
             timer = 3.0f;
             active = true;
