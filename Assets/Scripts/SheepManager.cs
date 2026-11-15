@@ -6,6 +6,7 @@ public class SheepManager : MonoBehaviour
 {
     [Header("Dependencies")]
     [SerializeField] private AnchorData anchorData;
+    [SerializeField] private TableInteract tableInteract;
 
     public GameObject testData;
 
@@ -19,7 +20,7 @@ public class SheepManager : MonoBehaviour
 
         GameObject partPrefab = partData.partPrefab;
 
-        GameObject oldPart = anchor.GetComponentInChildren<Transform>().gameObject;
+        GameObject oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
         
         if (oldPart != null)
         {
@@ -69,6 +70,7 @@ public class SheepManager : MonoBehaviour
     private void ReadyToCook()
     {
         cookable = true;
+        tableInteract.EscapeTable();
     }
 
     public void ResetSheep()
