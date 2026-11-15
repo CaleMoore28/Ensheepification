@@ -17,4 +17,6 @@ public class PartData : ScriptableObject
     public GameObject partPrefab;
     public Attribute attribute;
     public string[] tags;
+
+    public Mesh mesh;
 }

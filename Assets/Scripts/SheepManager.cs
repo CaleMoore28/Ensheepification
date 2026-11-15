@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,9 +13,24 @@ public class SheepManager : MonoBehaviour, Interactable
 
     private bool complete;
 
-    [SerializeField] private List<GameObject> bodyPartsList;
+    public List<GameObject> bodyPartsList;
 
-    private bool cookable = false;
+    public bool cookable = false;
+
+    [SerializeField] private BoxCollider boxCollider;
+
+    private void Start()
+    {
+        boxCollider.enabled = false;
+
+        int i = 0;
+        foreach (GameObject bodyPartObject in bodyPartsList)
+        {
+            bodyPartObject.GetComponent<MeshFilter>().mesh = null;
+            bodyPartObject.GetComponent<PartManager>().partDataScriptableObject = null;
+            i += 1;
+        }
+    }
 
     public void Interact(PlayerController _playerController)
     {
@@ -33,31 +49,41 @@ public class SheepManager : MonoBehaviour, Interactable
     {
         GameObject anchor = anchorData.getAnchorObject(partData.attribute);
 
-        GameObject partPrefab = partData.partPrefab;
+        anchor.GetComponentInChildren<PartManager>().partDataScriptableObject = partData;
+        anchor.GetComponentInChildren<MeshFilter>().mesh = partData.mesh;
+
+  /*      //GameObject partPrefab = partData.partPrefab;
 
         GameObject oldPart = null;
+        PartData oldPartData = null;
         try
         {
             oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
+            oldPartData = oldPart.GetComponentInChildren<PartManager>().partDataScriptableObject;
         }
         catch { }
 
-        Debug.Log(oldPart);
-
         if (oldPart == null)
         {
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
-            bodyPartsList.Add(newPart);
+            oldPart.GetComponent<MeshFilter>().mesh = partData.mesh;
+            oldPartData = partData;
+            //GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
+            //bodyPartsList.Add(partData);
         }
 
         if (oldPart != null)
         {
-            bodyPartsList.Remove(oldPart);
-            Destroy(oldPart);
-            
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
-            bodyPartsList.Add(newPart);
+            //bodyPartsList.Remove(oldPart);
+            //Destroy(oldPart);
+
+            oldPart.GetComponent<MeshFilter>().mesh = partData.mesh;
+            oldPartData = partData;
+
+            //GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
+            //bodyPartsList.Add(newPart);
         }
+
+        */
     }
 
     public void TryReadyToCook()
@@ -67,6 +93,7 @@ public class SheepManager : MonoBehaviour, Interactable
         foreach (GameObject bodyPart in bodyPartsList)
         {
             PartData bodyPartData = bodyPart.GetComponent<PartManager>().partDataScriptableObject;
+
             //Head
             if (bodyPartData.attribute == (Attribute) 0)
             {
@@ -95,10 +122,22 @@ public class SheepManager : MonoBehaviour, Interactable
     {
         cookable = true;
         tableInteract.EscapeTable();
+
+        boxCollider.enabled = true;
     }
 
     public void ResetSheep()
     {
         cookable = false;
+
+        int i = 0;
+        foreach (GameObject bodyPartObject in bodyPartsList)
+        {
+            bodyPartObject.GetComponent<MeshFilter>().mesh = null;
+            bodyPartObject.GetComponent<PartManager>().partDataScriptableObject = null;
+            i += 1;
+        }
+
+        boxCollider.enabled = false;
     }
 }

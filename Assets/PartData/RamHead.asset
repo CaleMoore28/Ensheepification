@@ -19,3 +19,4 @@ MonoBehaviour:
   attribute: 0
   tags:
   - Basic
+  mesh: {fileID: 512618487521180046, guid: 1e85ce8796dfde049b94c977c5325ceb, type: 3}
