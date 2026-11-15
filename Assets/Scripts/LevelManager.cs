@@ -10,8 +10,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Hud hud;
     [SerializeField] private ScoreReportHandler reportHandler;
     [SerializeField] private TicketManager ticketManager;
+    [SerializeField] private PlayerController playerController;
 
-    
+    [SerializeField] private BinManager binManager;
 
     private int day = 1;
     public int Day { get { return day; } }
@@ -49,7 +50,7 @@ public class LevelManager : MonoBehaviour
         shiftManager.StartShift();
         ticketManager.SetDay(day);
 
-    
+        binManager.CheckCorruption(day);
     }
 
     private void OnShiftOver()

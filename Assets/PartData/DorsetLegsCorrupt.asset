@@ -15,7 +15,8 @@ MonoBehaviour:
   partName: legs_dorset_corrupt
   cost: 200
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: 4176c887ab42a1e4ebc426ab88923491, type: 3}
+  partPrefab: {fileID: 919132149155446097, guid: ff7e0a2f9a853214d9927d825562de4b, type: 3}
   attribute: 3
   tags:
   - Evil
+  mesh: {fileID: -7109159399440564492, guid: d2f4cef17499c9243aee248516edb545, type: 3}

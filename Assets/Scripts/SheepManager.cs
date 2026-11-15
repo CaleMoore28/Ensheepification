@@ -36,7 +36,13 @@ public class SheepManager : MonoBehaviour, Interactable
         foreach (GameObject bodyPartObject in bodyPartsList)
         {
             bodyPartObject.GetComponent<MeshFilter>().mesh = null;
-            bodyPartObject.GetComponent<PartManager>().partDataScriptableObject = null;
+
+            try
+            {
+                bodyPartObject.GetComponent<PartManager>().partDataScriptableObject = null;
+            }
+            catch { }
+
             i += 1;
 
             spinningEnabled = true;
