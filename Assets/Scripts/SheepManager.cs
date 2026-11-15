@@ -12,23 +12,22 @@ public class SheepManager : MonoBehaviour, Interactable
 
     private bool complete;
 
+    [SerializeField] private List<GameObject> bodyPartsList;
+
+    private bool cookable = false;
+
     public void Interact(PlayerController _playerController)
     {
         print("interact with sheep");
-        complete = true;
         //TODO Remove Line
-        if (complete){
+        if (cookable)
+        {
             print("sheep child?");
             GameObject player = GameObject.FindWithTag("Player");
             transform.parent = player.transform;
         }
         this.gameObject.layer = default;
     }
-
-    [SerializeField] private List<GameObject> bodyPartsList;
-
-    private bool cookable = false;
-
 
     public void AddPart(PartData partData)
     {
@@ -47,7 +46,7 @@ public class SheepManager : MonoBehaviour, Interactable
 
         if (oldPart == null)
         {
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
+            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
             bodyPartsList.Add(newPart);
         }
 
@@ -55,8 +54,8 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             bodyPartsList.Remove(oldPart);
             Destroy(oldPart);
-
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
+            
+            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
             bodyPartsList.Add(newPart);
         }
     }
