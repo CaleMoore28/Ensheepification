@@ -5,7 +5,7 @@ public enum Attribute
     HEAD,
     BODY,
     HORNS,
-    LEGS,
+    LEGS
 }
 
 [CreateAssetMenu(fileName = "PartData", menuName = "New Part")]
@@ -17,4 +17,6 @@ public class PartData : ScriptableObject
     public GameObject partPrefab;
     public Attribute attribute;
     public string[] tags;
+
+    public Mesh mesh;
 }
