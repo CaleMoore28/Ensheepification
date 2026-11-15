@@ -26,6 +26,8 @@ public class SheepManager : MonoBehaviour, Interactable
 
     [SerializeField] private GameObject sheepResetOffset;
 
+    [SerializeField] private MoneyManager moneyManager;
+
     private void Start()
     {
         boxCollider.enabled = false;
@@ -61,7 +63,17 @@ public class SheepManager : MonoBehaviour, Interactable
 
     public void AddPart(PartData partData)
     {
+
+        int totalCost = 0;
+        totalCost-= partData.cost;
         GameObject anchor = anchorData.getAnchorObject(partData.attribute);
+
+
+
+        if (anchor.GetComponentInChildren<PartManager>().partDataScriptableObject){
+            totalCost += anchor.GetComponentInChildren<PartManager>().partDataScriptableObject.cost;
+        }
+        moneyManager.IncrementMoney(totalCost);        
 
         anchor.GetComponentInChildren<PartManager>().partDataScriptableObject = partData;
         anchor.GetComponentInChildren<MeshFilter>().mesh = partData.mesh;

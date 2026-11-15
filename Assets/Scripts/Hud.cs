@@ -17,7 +17,7 @@ public class Hud : MonoBehaviour
 
     private void Start()
     {
-        hudPanel.SetActive(false);
+        // hudPanel.SetActive(false);
         moneyManager.OnMoneyChanged += UpdateMoney;
     }
 
