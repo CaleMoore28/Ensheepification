@@ -77,4 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18215b3ccbf35b4eaeb60190ceda7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PartManager
-  partDataScriptableObject: {fileID: 0}
+  partDataScriptableObject: {fileID: 11400000, guid: 76967c7da8d5f5f4e9cb90f06316d3b3, type: 2}
