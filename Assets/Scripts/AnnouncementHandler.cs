@@ -8,11 +8,6 @@ public class AnnouncementHandler : MonoBehaviour
     public Action OnAnnouncementAcknowledged;
 
 
-    private void Start()
-    {
-        //announcementPanel.SetActive(false);
-    }
-
     public void ShowAnnouncement(int day)
     {
         announcementPanel.SetActive(true);
