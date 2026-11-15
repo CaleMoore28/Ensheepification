@@ -15,7 +15,7 @@ public class SatisfactionHandler : MonoBehaviour
         completedTickets = 0;
     }
 
-    public void ScoreTicket(TicketData ticket, PartData[] parts)
+    public void ScoreTicket(Ticket ticket, List<GameObject> parts)
     {
         HashSet<string> correctTags = new HashSet<string>();
         HashSet<string> extraTags = new HashSet<string>();
@@ -24,11 +24,13 @@ public class SatisfactionHandler : MonoBehaviour
 
         bool forbiddenAttributes = false;
 
-        foreach (PartData part in parts)
+        foreach (GameObject parentObj in parts)
         {
+            PartData part = parentObj.GetComponent<PartManager>().partDataScriptableObject;
+
             foreach (string tag in part.tags)
             {
-                if (ticket.tags.Contains(tag))
+                if (ticket.requiredTags.Contains(tag))
                 {
                     correctTags.Add(tag);
                 }
@@ -38,21 +40,21 @@ public class SatisfactionHandler : MonoBehaviour
                 }
             }
 
-            if (ticket.requiredAttributes.Contains(part.attribute))
+            if (ticket.requiredAttributes.Contains(part.attribute.ToString()))
             {
                 attributes.Add(part.attribute);
             }
-            else if (ticket.unwantedAttributes.Contains(part.attribute))
+            else if (ticket.unwantedAttributes.Contains(part.attribute.ToString()))
             {
                 forbiddenAttributes = true;
             }
         }
 
-        Assert.LessOrEqual(correctTags.Count, ticket.tags.Length);
-        Assert.LessOrEqual(attributes.Count, ticket.requiredAttributes.Length);
+        Assert.LessOrEqual(correctTags.Count, ticket.requiredTags.Count);
+        Assert.LessOrEqual(attributes.Count, ticket.requiredAttributes.Count);
 
-        float tagScore = Mathf.Max(correctTags.Count - extraTags.Count, 0.0f) / (float)ticket.tags.Length;
-        float attributeScore = attributes.Count / (float)ticket.requiredAttributes.Length;
+        float tagScore = Mathf.Max(correctTags.Count - extraTags.Count, 0.0f) / (float)ticket.requiredTags.Count;
+        float attributeScore = attributes.Count / (float)ticket.requiredAttributes.Count;
         float forbiddenScore = 1.0f;
         
         if (forbiddenAttributes)

@@ -11,8 +11,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private ScoreReportHandler reportHandler;
     [SerializeField] private TicketManager ticketManager;
 
-    [SerializeField] private PromptGenerator promptGenerator;
-
     
 
     private int day = 1;
@@ -37,7 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
-        promptGenerator.GenerateTicket();
+        StartDay();
     }
 
     private void StartDay()

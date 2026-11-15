@@ -1,53 +1,46 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TicketManager : MonoBehaviour
 {
     [SerializeField] private TicketDisplay ticketDisplay;
     [Header("Tickets By Day")]
-    [SerializeField] private TicketData[] dayOneTickets;
-    [SerializeField] private TicketData[] dayTwoTickets;
-    [SerializeField] private TicketData[] dayThreeTickets;
-    [SerializeField] private TicketData[] dayFourTickets;
-    [SerializeField] private TicketData[] dayFiveTickets;
 
-    private int currentTicket = 0;
-    private TicketData[] currentTicketQueue;
+    // format is prompt, attribute number, tag number
+    [SerializeField] private object[,] dayOneTickets =
+    {
+        {"Prompt 1: $tag", 0, 1},
+        {"Prompt 2: $attribute", 1, 0},
+        {"Prompt 1: $attribute $tag", 1, 1},
+    };
+    [SerializeField] private object[,] dayTwoTickets;
+    [SerializeField] object[,] dayThreeTickets;
 
-    private SatisfactionHandler satisfactionHandler;
+    [SerializeField] private Ticket currentTicket;
+
+    [SerializeField] private SatisfactionHandler satisfactionHandler;
+
+    [SerializeField] private PromptGenerator promptGenerator;
 
     public Action OnAllTicketsFinished;
 
-
-    private void Start()
-    {
-        satisfactionHandler = GetComponent<SatisfactionHandler>();
-    }
-
-
     public void SetDay(int day)
     {
-        currentTicketQueue = GetTicketQueue(day);
-        currentTicket = 0;
-        ticketDisplay.DisplayTicketData(currentTicketQueue[currentTicket]);
+        promptGenerator.promptOptions = SetTicketQueue(day);
+        promptGenerator.GenerateTicket();
+        ticketDisplay.DisplayTicketData(currentTicket);
     }
 
     public void NextTicket()
-    {
-        currentTicket++;
-        if (currentTicket >= currentTicketQueue.Length)
-        {
-            OnAllTicketsFinished?.Invoke();
-        }
-        else
-        {
-            ticketDisplay.DisplayTicketData(currentTicketQueue[currentTicket]);
-        }
+    {  
+        promptGenerator.GenerateTicket();
+        ticketDisplay.DisplayTicketData(currentTicket);
     }
 
 
-    private TicketData[] GetTicketQueue(int day)
+    private object[,] SetTicketQueue(int day)
     {
         if (day == 1)
         {
@@ -61,16 +54,12 @@ public class TicketManager : MonoBehaviour
         {
             return dayThreeTickets;
         }
-        else if (day == 4)
-        {
-            return dayFourTickets;
-        }
-        return dayFiveTickets;
+        return null;
     }
 
-    public void EvaluateTicket(PartData[] parts)
+    public void EvaluateTicket(List<GameObject> parts)
     {
-        satisfactionHandler.ScoreTicket(currentTicketQueue[currentTicket], parts);
+        satisfactionHandler.ScoreTicket(currentTicket, parts);
         NextTicket();
     }
 }
