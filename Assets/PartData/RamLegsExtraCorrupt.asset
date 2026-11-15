@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: legs_ram_extra_corrupt
   cost: 100
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: 3ad1aad713aeb374a94f987a0ae57053, type: 3}
+  partPrefab: {fileID: 581090164128121385, guid: f6180a7675767184f82c41e07ca01b9f, type: 3}
   attribute: 3
   tags:
   - Evil

@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: legs_dorset_extra_corrupt
   cost: 100
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: f94fd1ee34f3de0419de1f33cc8f0c7c, type: 3}
+  partPrefab: {fileID: 5323224987839743064, guid: 4beb16927c30b594fbc6d139896a6c9e, type: 3}
   attribute: 3
   tags:
   - Evil

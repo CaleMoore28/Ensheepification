@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: body_ram_extra_corrupt
   cost: 200
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: c37b0fd6dbbb6424a966c68e3bcb5db2, type: 3}
+  partPrefab: {fileID: 990941873516958995, guid: beda951b5a189924f982ce89a80a63fb, type: 3}
   attribute: 1
   tags:
   - Evil

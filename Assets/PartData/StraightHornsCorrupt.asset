@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: horns_straight_corrupt
   cost: 100
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: 84b25f08f45910f429fd34c84596d3e5, type: 3}
+  partPrefab: {fileID: 7175319352541995074, guid: d66ed4775f48f1042948aca669cd6fbc, type: 3}
   attribute: 2
   tags:
   - Evil

@@ -15,8 +15,8 @@ MonoBehaviour:
   partName: 
   cost: 690
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: b79ba52798c2d9b4a84cba8a98c662f7, type: 3}
-  attribute: 0
+  partPrefab: {fileID: 5370841515176036321, guid: c0a77d985f41dc24baa7b71e080e8c5f, type: 3}
+  attribute: 4
   tags:
   - Tail
   - Fantastical
