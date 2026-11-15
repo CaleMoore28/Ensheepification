@@ -134,6 +134,8 @@ public class SheepManager : MonoBehaviour, Interactable
         spinningEnabled = true;
         spin.hasChangedSpinState = false;
 
+        transform.parent = null;
+
         gameObject.transform.localScale = Vector3.one;
 
         transform.parent = null;
