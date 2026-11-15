@@ -19,7 +19,7 @@ public class SheepManager : MonoBehaviour, Interactable
     public bool cookable = false;
     public bool spinningEnabled;
 
-    [SerializeField] private float heldSize = 0.8f;
+    [SerializeField] private float heldSize = 0.33f;
 
     [SerializeField] private BoxCollider boxCollider;
 
@@ -72,17 +72,17 @@ public class SheepManager : MonoBehaviour, Interactable
             PartData bodyPartData = bodyPart.GetComponent<PartManager>().partDataScriptableObject;
 
             //Head
-            if (bodyPartData.attribute == (Attribute) 0)
+            if (bodyPartData.attribute == Attribute.HEAD)
             {
                 necessaryPartCounter += 1;
             }
             //Body
-            else if (bodyPartData.attribute == (Attribute) 1)
+            else if (bodyPartData.attribute == Attribute.BODY)
             {
                 necessaryPartCounter += 1;
             }
             // Legs
-            else if (bodyPartData.attribute == (Attribute) 3)
+            else if (bodyPartData.attribute == Attribute.LEGS)
             {
                 necessaryPartCounter += 1;
             }
@@ -105,7 +105,7 @@ public class SheepManager : MonoBehaviour, Interactable
 
         spinningEnabled = false;
 
-        gameObject.transform.localScale += new Vector3(-heldSize, -heldSize, -heldSize);
+        gameObject.transform.localScale = new Vector3(heldSize, heldSize, heldSize);
     }
 
     public void ResetSheep()
