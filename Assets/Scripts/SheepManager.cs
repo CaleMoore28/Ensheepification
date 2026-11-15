@@ -71,15 +71,16 @@ public class SheepManager : MonoBehaviour, Interactable
     {
 
         int totalCost = 0;
-        totalCost-= partData.cost;
+
         GameObject anchor = anchorData.getAnchorObject(partData.attribute);
 
+        totalCost -= partData.cost;
 
-
-        if (anchor.GetComponentInChildren<PartManager>().partDataScriptableObject){
-            totalCost += anchor.GetComponentInChildren<PartManager>().partDataScriptableObject.cost;
+        if (anchor.GetComponentInChildren<PartManager>().partDataScriptableObject)
+        {
+                totalCost += anchor.GetComponentInChildren<PartManager>().partDataScriptableObject.cost;
         }
-        moneyManager.IncrementMoney(totalCost);        
+            moneyManager.IncrementMoney(totalCost); 
 
         anchor.GetComponentInChildren<PartManager>().partDataScriptableObject = partData;
         anchor.GetComponentInChildren<MeshFilter>().mesh = partData.mesh;
@@ -158,6 +159,9 @@ public class SheepManager : MonoBehaviour, Interactable
         spin.hasChangedSpinState = false;
 
         gameObject.transform.localScale = Vector3.one;
+
+
+        this.gameObject.layer = 6;
 
         transform.parent = null;
         transform.position = sheepResetOffset.transform.position;

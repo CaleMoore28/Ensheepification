@@ -11,9 +11,6 @@ public class AnchorData : MonoBehaviour
 
     [SerializeField] private GameObject legsAnchor;
 
-    [SerializeField] private GameObject tailAnchor;
-    [SerializeField] private GameObject wingsAnchor;
-
     private Attribute attribute = Attribute.HEAD;
 
     public GameObject getAnchorObject(Attribute inputAttribute)
@@ -40,14 +37,6 @@ public class AnchorData : MonoBehaviour
             // Legs
             case (Attribute.LEGS):
                 return legsAnchor;
-
-            // Legs
-            case (Attribute.TAIL):
-                return tailAnchor;
-
-            // Wings
-            case (Attribute.WINGS):
-                return wingsAnchor;
 
         }
     }

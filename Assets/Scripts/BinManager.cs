@@ -36,17 +36,17 @@ public class BinManager : MonoBehaviour
 
             // 0-5 uncoorrupted
             case (1):
-                loopIndex = 5;
+                loopIndex = 3;
                 break;
 
             // 6 - 9
             case (2):
-                loopIndex = 9;
+                loopIndex = 7;
                 break;
 
             // 10 - 13
             case (3):
-                loopIndex = 13;
+                loopIndex = 11;
                 break;
         }
 
