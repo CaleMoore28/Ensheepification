@@ -15,7 +15,8 @@ MonoBehaviour:
   partName: legs_longwool_extra_corrupt
   cost: 100
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: fc0539046041c144abae5deb48c567bd, type: 3}
+  partPrefab: {fileID: 919132149155446097, guid: 0929bba085a64de46854077ce459bea7, type: 3}
   attribute: 3
   tags:
   - Evil
+  mesh: {fileID: 6756065034273819636, guid: 0929bba085a64de46854077ce459bea7, type: 3}

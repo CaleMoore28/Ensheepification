@@ -15,7 +15,8 @@ MonoBehaviour:
   partName: head_dorset_corrupt
   cost: 200
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 919132149155446097, guid: 2fad10c78fa65514eb107afca97d06da, type: 3}
+  partPrefab: {fileID: 919132149155446097, guid: d2f4cef17499c9243aee248516edb545, type: 3}
   attribute: 0
   tags:
   - Evil
+  mesh: {fileID: 4833790250767621264, guid: d2f4cef17499c9243aee248516edb545, type: 3}
