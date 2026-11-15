@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void FixedUpdate()
@@ -60,8 +58,21 @@ public class PlayerController : MonoBehaviour
     public void ToggleMovement(bool toggle)
     {
         isMovementEnabled = toggle;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        ToggleLock(toggle);
+    }
+
+    public void ToggleLock(bool toggle)
+    {
+        if (toggle)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void OnMove(InputValue inputValue)
@@ -96,14 +107,10 @@ public class PlayerController : MonoBehaviour
         pauseMenu.TogglePause();
         if (pauseMenu.Paused)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
             ToggleMovement(false);
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
             ToggleMovement(true);
         }
     }
