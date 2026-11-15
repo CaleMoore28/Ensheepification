@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level.unity
     guid: c6aaffe083e540d44816741c4ffb0fd8
+  - enabled: 1
+    path: Assets/Scenes/BeginningCutscene.unity
+    guid: a0ed53de53946ae419edea8886603495
+  - enabled: 1
+    path: Assets/Scenes/FinalCutscene.unity
+    guid: 51fc391926c19fe4f8b3339e080270dd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
