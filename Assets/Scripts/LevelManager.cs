@@ -71,6 +71,8 @@ public class LevelManager : MonoBehaviour
         moneyManager.OnBankrupt -= OnBankrupt;
         shiftManager.OnShiftOver -= OnShiftOver;
 
+        playerController.ToggleMovement(false);
+
         reportHandler.ShowScoreReport();
         reportHandler.OnLevelAdvance += ProgressDay;
     }
