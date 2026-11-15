@@ -9,6 +9,8 @@ public class TableInteract : MonoBehaviour, Interactable
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject playerAtTablePosition;
 
+    [SerializeField] private BinManager binManager;
+
     PlayerController playerController;
 
     public void Interact(PlayerController _playerController)
@@ -32,5 +34,7 @@ public class TableInteract : MonoBehaviour, Interactable
 
 
         playerController.ToggleMovement(true);
+
+        binManager.NormalizeBinList();
     }
 }

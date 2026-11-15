@@ -36,7 +36,7 @@ public class BinLogic : MonoBehaviour
         binIsOpen = true;
     }
 
-    private void CloseBins()
+    public void CloseBins()
     {
         foreach (GameObject bin in binParts)
         {
@@ -53,5 +53,4 @@ public class BinLogic : MonoBehaviour
         }
         binIsOpen = false;
     }
-
 }
