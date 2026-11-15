@@ -16,6 +16,8 @@ public class TableInteract : MonoBehaviour, Interactable
         tableCamera.Priority = 10;
 
         playerController.ToggleMovement(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void EscapeTable()

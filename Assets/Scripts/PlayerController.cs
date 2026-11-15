@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
     public void ToggleMovement(bool toggle)
     {
         isMovementEnabled = toggle;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void OnMove(InputValue inputValue)
