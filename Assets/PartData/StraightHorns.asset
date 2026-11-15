@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StraightHorns
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: horns_straight
-  cost: 10
+  cost: 200
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 6049644487744460619, guid: 50122b553fdacd3439836cb42220b536, type: 3}
   attribute: 2

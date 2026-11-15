@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicLegs
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: legs_basic
-  cost: 15
+  cost: 400
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 2161109436895439720, guid: d30e4193cc3c252479be7b98cc2062e0, type: 3}
   attribute: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DorsetLegs
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: legs_dorset
-  cost: 15
+  cost: 400
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 4556809422687619867, guid: 5d18da65942b4294b9257634bd308b37, type: 3}
   attribute: 3

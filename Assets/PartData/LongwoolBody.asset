@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LongwoolBody
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: body_longwool
-  cost: 25
+  cost: 800
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 2097710809911713470, guid: 745aa405221e7b94f8ebc19e91b8c297, type: 3}
   attribute: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicBody
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: body_basic
-  cost: 25
+  cost: 800
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 7024324904916811476, guid: 1b8bd9461781de44db290ea1e2fd2177, type: 3}
   attribute: 1
