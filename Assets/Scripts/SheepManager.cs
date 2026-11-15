@@ -140,5 +140,6 @@ public class SheepManager : MonoBehaviour, Interactable
 
         transform.parent = null;
         transform.position = sheepResetOffset.transform.position;
+        this.gameObject.layer = 6;
     }
 }
