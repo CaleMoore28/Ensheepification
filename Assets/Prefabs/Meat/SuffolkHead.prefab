@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4800816189441935783
+--- !u!1001 &7628139280764252005
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.02309
+      value: -8.509819
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.0000009618784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.15594
+      value: -3.6268847
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       propertyPath: m_Name
       value: SuffolkHead
@@ -58,20 +74,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5785826419825217130}
+      addedObject: {fileID: 4147132046102975900}
   m_SourcePrefab: {fileID: 100100000, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
---- !u!1 &5647097435108717814 stripped
+--- !u!1 &7286245387883844148 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dffd5e8a98685f7408df81b7ca7c3b65, type: 3}
-  m_PrefabInstance: {fileID: 4800816189441935783}
+  m_PrefabInstance: {fileID: 7628139280764252005}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5785826419825217130
+--- !u!114 &4147132046102975900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5647097435108717814}
+  m_GameObject: {fileID: 7286245387883844148}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e18215b3ccbf35b4eaeb60190ceda7f8, type: 3}

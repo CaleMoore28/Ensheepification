@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: horns_curly
   cost: 10
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 2215137280194504752, guid: a4c82993d8c3dad408c74ba1335b0521, type: 3}
+  partPrefab: {fileID: 4793935689397554904, guid: a4c82993d8c3dad408c74ba1335b0521, type: 3}
   attribute: 2
   tags:
   - Basic

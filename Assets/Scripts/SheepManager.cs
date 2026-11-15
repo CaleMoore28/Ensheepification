@@ -20,17 +20,26 @@ public class SheepManager : MonoBehaviour
 
         GameObject partPrefab = partData.partPrefab;
 
-        GameObject oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
-        
+        GameObject oldPart = null;
+        try
+        {
+            oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
+        }
+        catch { }
+
+        Debug.Log(oldPart);
+
+        if (oldPart == null)
+        {
+            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
+            bodyPartsList.Add(newPart);
+        }
+
         if (oldPart != null)
         {
             bodyPartsList.Remove(oldPart);
             Destroy(oldPart);
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
-            bodyPartsList.Add(newPart);
-        }
-        else
-        {
+
             GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
             bodyPartsList.Add(newPart);
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   partName: head_ram
   cost: 15
   uiIcon: {fileID: 0}
-  partPrefab: {fileID: 1193464297461249341, guid: a3a68c20967ef084991a365573002087, type: 3}
+  partPrefab: {fileID: 3956768781658209633, guid: a3a68c20967ef084991a365573002087, type: 3}
   attribute: 0
   tags:
   - Basic
