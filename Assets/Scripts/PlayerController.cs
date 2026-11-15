@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+        ToggleMovement(false);
     }
 
     private void FixedUpdate()
