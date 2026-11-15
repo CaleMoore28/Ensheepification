@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RamLegs
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: legs_ram
-  cost: 15
+  cost: 400
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 2832667797836865075, guid: fae6f1da07656fb479bad1aa2d69a403, type: 3}
   attribute: 3

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DorsetHead
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: head_dorset
-  cost: 15
+  cost: 400
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 1336983745893570920, guid: f86798640504ad24daf191a91dce5c0e, type: 3}
   attribute: 0
