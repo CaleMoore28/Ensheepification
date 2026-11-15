@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -49,7 +50,9 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             print("sheep child?");
             GameObject player = GameObject.FindWithTag("Player");
-            transform.parent = player.transform;
+            GameObject cameraPos = player.GetComponentInChildren<CinemachineCamera>().gameObject;
+            transform.parent = cameraPos.transform;
+            //transform.parent = player.transform;
         }
         this.gameObject.layer = default;
     }
