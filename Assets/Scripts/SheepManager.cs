@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SheepManager : MonoBehaviour
+public class SheepManager : MonoBehaviour, Interactable
 {
     [Header("Dependencies")]
     [SerializeField] private AnchorData anchorData;
@@ -10,9 +10,25 @@ public class SheepManager : MonoBehaviour
 
     public GameObject testData;
 
+    private bool complete;
+
+    public void Interact(PlayerController _playerController)
+    {
+        print("interact with sheep");
+        complete = true;
+        //TODO Remove Line
+        if (complete){
+            print("sheep child?");
+            GameObject player = GameObject.FindWithTag("Player");
+            transform.parent = player.transform;
+        }
+        this.gameObject.layer = default;
+    }
+
     [SerializeField] private List<GameObject> bodyPartsList;
 
     private bool cookable = false;
+
 
     public void AddPart(PartData partData)
     {
