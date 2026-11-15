@@ -4,8 +4,8 @@ public enum Attribute
 {
     HEAD,
     BODY,
-    HORNS,
     LEGS,
+    HORNS
 }
 
 [CreateAssetMenu(fileName = "PartData", menuName = "New Part")]
