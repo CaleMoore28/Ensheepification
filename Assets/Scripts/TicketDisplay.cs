@@ -4,7 +4,7 @@ using UnityEngine;
 public class TicketDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI ticketText;
-    [SerializeField] private TicketData testTicket;
+    [SerializeField] private Ticket testTicket;
 
 
     private void Start()
@@ -12,8 +12,10 @@ public class TicketDisplay : MonoBehaviour
         DisplayTicketData(testTicket);
     }
 
-    public void DisplayTicketData(TicketData ticketData)
+    public void DisplayTicketData(Ticket ticketData)
     {
-        ticketText.text = ticketData.prompt;
+        if (ticketData){    
+            ticketText.text = ticketData.prompt;
+        }
     }
 }

@@ -15,6 +15,14 @@ public class Ticket : MonoBehaviour
 
     private string[] tags = {"cute", "evil", "basic", "fluffy"};
 
+    public List<string> requiredAttributes = new List<string>();
+    public List<string> requiredTags  = new List<string>();
+
+    public List<string> unwantedAttributes = new List<string>();
+
+    public string prompt;
+
+    
     public void setAttributes(string[] newAttributes)
     {
         attributes = newAttributes;
@@ -27,26 +35,24 @@ public class Ticket : MonoBehaviour
 
     public void LoadText(object text, object attributeCount, object tagCount)
     {
-        string final = text.ToString(); 
-        List<string> currAttributes = new List<string>();
-        List<string> currTags  = new List<string>();
+        prompt = text.ToString(); 
 
         for (int i = 0; i < (int) attributeCount; i++) 
         {
             var regex = new Regex(Regex.Escape("$attribute"));
-            currAttributes.Add(attributes[UnityEngine.Random.Range(0, attributes.Length)]);
-            final = regex.Replace(final, currAttributes[i], 1);
+            requiredAttributes.Add(attributes[UnityEngine.Random.Range(0, attributes.Length)]);
+            prompt = regex.Replace(prompt, requiredAttributes[i], 1);
     
         }
         for (int i = 0; i < (int) tagCount; i++) 
         {
             var regex = new Regex(Regex.Escape("$tag"));
-            currTags.Add(tags[UnityEngine.Random.Range(0, tags.Length)]);
-            final = regex.Replace(final, currTags[i], 1);
+            requiredTags.Add(tags[UnityEngine.Random.Range(0, tags.Length)]);
+            prompt = regex.Replace(prompt, requiredTags[i], 1);
 
            
         }
-        promptText.text=  final;
+        promptText.text=  prompt;
 
     }
 }

@@ -13,7 +13,7 @@ public class SheepManager : MonoBehaviour, Interactable
 
     private bool complete;
 
-    public List<GameObject> bodyPartsList;
+    [SerializeField] public List<GameObject> bodyPartsList;
 
     public bool cookable = false;
 
@@ -86,7 +86,7 @@ public class SheepManager : MonoBehaviour, Interactable
         */
     }
 
-    public void TryReadyToCook()
+   public void TryReadyToCook()
     {
         int necessaryPartCounter = 0;
 
