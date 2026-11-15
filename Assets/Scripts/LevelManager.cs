@@ -21,13 +21,9 @@ public class LevelManager : MonoBehaviour
 
     private Dictionary<int, int> dailyBudget = new Dictionary<int, int> 
     { 
-        {1, 500},
-        {2, 500},
-        {3, 400},
-        {4, 400},
-        {5, 300},
-        {6, 300},
-        {7, 200},
+        {1, 5000},
+        {2, 2500},
+        {3, 1000},
     };
 
 
