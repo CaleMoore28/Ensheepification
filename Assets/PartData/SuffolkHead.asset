@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SuffolkHead
   m_EditorClassIdentifier: Assembly-CSharp::PartData
   partName: head_suffolk
-  cost: 15
+  cost: 400
   uiIcon: {fileID: 0}
   partPrefab: {fileID: 7286245387883844148, guid: a10fcec2c54173044ab060dbe31b87e6, type: 3}
   attribute: 0
