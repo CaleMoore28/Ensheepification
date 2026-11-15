@@ -21,12 +21,12 @@ public class TicketManager : MonoBehaviour
         {"Doll-E, I want a %tag sheep, with $attribute.", 1, 1},
         {"Prompt 1: $attribute $tag", 1, 1},
     };
-    [SerializeField] object[,] dayThreeTicket=
+    [SerializeField] private object[,] dayThreeTickets=
     {
-        {"Generate me a sheep that I can give my $tag boyfriend. Make me a sheep that says “wrap me up in your big, $tag arms.” But make sure it’s not too nice or I can’t dump him next year." 
-            , 0, 2},
-        {"SheepGPT, generate me a sheep with rogue-like elements, make it $tag, and spit on it.", 0, 1},
-        {"Prompt 1: $attribute $tag", 1, 1},
+        // {"Generate me a sheep that I can give my $tag boyfriend. Make me a sheep that says “wrap me up in your big, $tag arms.” But make sure it’s not too nice or I can’t dump him next year." 
+        //     , 0, 2},
+        // {"SheepGPT, generate me a sheep with rogue-like elements, make it $tag, and spit on it.", 0, 1},
+        // {"Prompt 1: $attribute $tag", 1, 1},
     };
 
     [SerializeField] private Ticket currentTicket;

@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutsceneManager
   cutsceneLength: 10
-  nextScene: Level
+  nextScene: MainMenu
   cutsceneCamera: {fileID: 1162883773}
   startPos: {fileID: 0}
   endPos: {fileID: 0}
