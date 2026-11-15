@@ -11,6 +11,8 @@ public class CutsceneManager : MonoBehaviour
 
     private float timer;
 
+    public bool endScene = false;
+
     private void Start()
     {
         timer = cutsceneLength;

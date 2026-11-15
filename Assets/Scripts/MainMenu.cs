@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     {
         titleButtonsParent.SetActive(true);
         creditsParent.SetActive(false);
+        GameManager.Instance.bankrupt=false;
     }
 
     public void OnPlayPressed()

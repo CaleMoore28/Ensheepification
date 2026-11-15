@@ -638,6 +638,7 @@ MonoBehaviour:
   hud: {fileID: 1913695280454783280}
   reportHandler: {fileID: 1983750070935617152}
   ticketManager: {fileID: 1532285766}
+  playerController: {fileID: 0}
   attributes:
   - horns
   - small

@@ -34,6 +34,8 @@ public class TicketManager : MonoBehaviour
         {"Generate me a sheep that is so $tag that it will intimidate a bear with one, $tag stare.", 0, 1}
     };
 
+    [SerializeField] string[] tags = {"cute", "evil", "basic", "fluffy", "chill", "fantastical", "old-fashioned", "baazarrre", "hdkjdkfjejufiop", "Quirked Up White Boy"};
+
     [SerializeField] private Ticket currentTicket;
 
     [SerializeField] private SatisfactionHandler satisfactionHandler;
@@ -60,6 +62,10 @@ public class TicketManager : MonoBehaviour
         promptGenerator.promptOptions = SetTicketQueue(day);
         promptGenerator.GenerateTicket();
         ticketDisplay.DisplayTicketData(currentTicket);
+        if (day = 3)
+        {
+            currentTicket.setTags(tags);
+        }
     }
 
     public void NextTicket()

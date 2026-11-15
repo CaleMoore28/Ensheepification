@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return instance; } }
 
 
+    public bool bankrupt = false;
+
     private void Start()
     {
         if (instance == null)

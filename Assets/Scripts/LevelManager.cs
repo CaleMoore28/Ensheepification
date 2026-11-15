@@ -10,9 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Hud hud;
     [SerializeField] private ScoreReportHandler reportHandler;
     [SerializeField] private TicketManager ticketManager;
-    [SerializeField] private PlayerController playerController;
 
-
+    
 
     private int day = 1;
     public int Day { get { return day; } }
@@ -32,21 +31,20 @@ public class LevelManager : MonoBehaviour
     {
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
+        StartDay();
     }
 
     private void StartDay()
     {
         announcementHandler.OnAnnouncementAcknowledged -= StartDay;
 
-        playerController.ToggleMovement(true);
-
         moneyManager.OnBankrupt += OnBankrupt;
         shiftManager.OnShiftOver += OnShiftOver;
+        
 
         hud.SetDay(day);
 
         hud.ToggleHud(true);
-        moneyManager.SetBudget(dailyBudget[day]);
         moneyManager.SetBudget(dailyBudget[day]);
         shiftManager.StartShift();
         ticketManager.SetDay(day);
@@ -68,10 +66,22 @@ public class LevelManager : MonoBehaviour
         moneyManager.OnBankrupt -= OnBankrupt;
         shiftManager.OnShiftOver -= OnShiftOver;
 
-        playerController.ToggleMovement(false);
-
         reportHandler.ShowScoreReport();
-        reportHandler.OnLevelAdvance += ProgressDay;
+        if (day != 3){
+            reportHandler.OnLevelAdvance += ProgressDay;
+        }else{
+            reportHandler.OnLevelAdvance += OnGameOver;
+            GameManager.Instance.MountScene("FinalCutscene");
+        }
+
+    }
+
+    private void OnBankrupt()
+    {
+        reportHandler.OnLevelAdvance -= OnGameOver;
+        GameManager.Instance.Bankrupt= true;
+        GameManager.Instance.MountScene("FinalCutscene");
+
     }
 
     private void ProgressDay()
@@ -80,5 +90,7 @@ public class LevelManager : MonoBehaviour
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
     }
+
+
 
 }
