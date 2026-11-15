@@ -41,14 +41,15 @@ public class LevelManager : MonoBehaviour
         moneyManager.OnBankrupt += OnBankrupt;
         shiftManager.OnShiftOver += OnShiftOver;
 
-
-        moneyManager.SetBudget(dailyBudget[Day]);
-        shiftManager.StartShift();
-        ticketManager.SetDay(day);
-
         hud.SetDay(day);
 
         hud.ToggleHud(true);
+        moneyManager.SetBudget(dailyBudget[day]);
+        moneyManager.SetBudget(dailyBudget[day]);
+        shiftManager.StartShift();
+        ticketManager.SetDay(day);
+
+    
     }
     
 
