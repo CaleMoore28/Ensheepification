@@ -62,7 +62,7 @@ public class TicketManager : MonoBehaviour
         promptGenerator.promptOptions = SetTicketQueue(day);
         promptGenerator.GenerateTicket();
         ticketDisplay.DisplayTicketData(currentTicket);
-        if (day = 3)
+        if (day == 3)
         {
             currentTicket.setTags(tags);
         }
