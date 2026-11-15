@@ -116,4 +116,5 @@ InitTestScene*.unity*
 /projectSettings/ShaderGraphSettings.asset
 /projectSettings/EditorBuildSettings.asset
 /Assets/BlenderModels/*.meta
+/Assets/2D_assets/*.meta
 /Assets/BlenderModels/**/*.meta
