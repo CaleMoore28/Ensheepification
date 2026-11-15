@@ -22,13 +22,9 @@ public class LevelManager : MonoBehaviour
 
     private Dictionary<int, int> dailyBudget = new Dictionary<int, int> 
     { 
-        {1, 500},
-        {2, 500},
-        {3, 400},
-        {4, 400},
-        {5, 300},
-        {6, 300},
-        {7, 200},
+        {1, 5000},
+        {2, 2500},
+        {3, 1000},
     };
 
 
@@ -47,14 +43,15 @@ public class LevelManager : MonoBehaviour
         moneyManager.OnBankrupt += OnBankrupt;
         shiftManager.OnShiftOver += OnShiftOver;
 
-
-        moneyManager.SetBudget(dailyBudget[Day]);
-        shiftManager.StartShift();
-        ticketManager.SetDay(day);
-
         hud.SetDay(day);
 
         hud.ToggleHud(true);
+        moneyManager.SetBudget(dailyBudget[day]);
+        moneyManager.SetBudget(dailyBudget[day]);
+        shiftManager.StartShift();
+        ticketManager.SetDay(day);
+
+    
     }
     
 
@@ -70,6 +67,8 @@ public class LevelManager : MonoBehaviour
     {
         moneyManager.OnBankrupt -= OnBankrupt;
         shiftManager.OnShiftOver -= OnShiftOver;
+
+        playerController.ToggleMovement(false);
 
         reportHandler.ShowScoreReport();
         reportHandler.OnLevelAdvance += ProgressDay;
