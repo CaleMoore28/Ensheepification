@@ -8,6 +8,7 @@ public class SheepManager : MonoBehaviour, Interactable
     [Header("Dependencies")]
     [SerializeField] private AnchorData anchorData;
     [SerializeField] private TableInteract tableInteract;
+    [SerializeField] private Spin spin;
 
     public GameObject testData;
 
@@ -16,6 +17,9 @@ public class SheepManager : MonoBehaviour, Interactable
     public List<GameObject> bodyPartsList;
 
     public bool cookable = false;
+    public bool spinningEnabled;
+
+    [SerializeField] private float heldSize = 0.33f;
 
     [SerializeField] private BoxCollider boxCollider;
 
@@ -29,6 +33,9 @@ public class SheepManager : MonoBehaviour, Interactable
             bodyPartObject.GetComponent<MeshFilter>().mesh = null;
             bodyPartObject.GetComponent<PartManager>().partDataScriptableObject = null;
             i += 1;
+
+            spinningEnabled = true;
+            spin.hasChangedSpinState = false;
         }
     }
 
@@ -52,38 +59,8 @@ public class SheepManager : MonoBehaviour, Interactable
         anchor.GetComponentInChildren<PartManager>().partDataScriptableObject = partData;
         anchor.GetComponentInChildren<MeshFilter>().mesh = partData.mesh;
 
-  /*      //GameObject partPrefab = partData.partPrefab;
-
-        GameObject oldPart = null;
-        PartData oldPartData = null;
-        try
-        {
-            oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
-            oldPartData = oldPart.GetComponentInChildren<PartManager>().partDataScriptableObject;
-        }
-        catch { }
-
-        if (oldPart == null)
-        {
-            oldPart.GetComponent<MeshFilter>().mesh = partData.mesh;
-            oldPartData = partData;
-            //GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
-            //bodyPartsList.Add(partData);
-        }
-
-        if (oldPart != null)
-        {
-            //bodyPartsList.Remove(oldPart);
-            //Destroy(oldPart);
-
-            oldPart.GetComponent<MeshFilter>().mesh = partData.mesh;
-            oldPartData = partData;
-
-            //GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
-            //bodyPartsList.Add(newPart);
-        }
-
-        */
+        spinningEnabled = true;
+        spin.hasChangedSpinState = false;
     }
 
     public void TryReadyToCook()
@@ -95,17 +72,17 @@ public class SheepManager : MonoBehaviour, Interactable
             PartData bodyPartData = bodyPart.GetComponent<PartManager>().partDataScriptableObject;
 
             //Head
-            if (bodyPartData.attribute == (Attribute) 0)
+            if (bodyPartData.attribute == Attribute.HEAD)
             {
                 necessaryPartCounter += 1;
             }
             //Body
-            else if (bodyPartData.attribute == (Attribute) 1)
+            else if (bodyPartData.attribute == Attribute.BODY)
             {
                 necessaryPartCounter += 1;
             }
             // Legs
-            else if (bodyPartData.attribute == (Attribute) 3)
+            else if (bodyPartData.attribute == Attribute.LEGS)
             {
                 necessaryPartCounter += 1;
             }
@@ -121,9 +98,14 @@ public class SheepManager : MonoBehaviour, Interactable
     private void ReadyToCook()
     {
         cookable = true;
+        
         tableInteract.EscapeTable();
 
         boxCollider.enabled = true;
+
+        spinningEnabled = false;
+
+        gameObject.transform.localScale = new Vector3(heldSize, heldSize, heldSize);
     }
 
     public void ResetSheep()
@@ -139,5 +121,10 @@ public class SheepManager : MonoBehaviour, Interactable
         }
 
         boxCollider.enabled = false;
+
+        spinningEnabled = true;
+        spin.hasChangedSpinState = false;
+
+        gameObject.transform.localScale = Vector3.one;
     }
 }

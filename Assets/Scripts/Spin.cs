@@ -8,15 +8,23 @@ public class Spin : MonoBehaviour
     [Header("Dependencies")]
     [SerializeField] private SheepManager sheepManager;
 
+    public bool hasChangedSpinState;
+
+    private void Start()
+    {
+        hasChangedSpinState = false;
+    }
+
     private void Update()
     {
-        if (!sheepManager.cookable)
+        if (sheepManager.spinningEnabled)
         {
             transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
         }
-        else
+        else if (sheepManager.spinningEnabled && !hasChangedSpinState)
         {
             transform.eulerAngles = Vector3.zero;
+            hasChangedSpinState = true;
         }
     }
 }
