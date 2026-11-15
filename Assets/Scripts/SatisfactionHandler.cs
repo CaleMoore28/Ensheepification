@@ -26,7 +26,17 @@ public class SatisfactionHandler : MonoBehaviour
 
         foreach (GameObject parentObj in parts)
         {
+            if (parentObj == null)
+            {
+                continue;
+            }
+
             PartData part = parentObj.GetComponent<PartManager>().partDataScriptableObject;
+
+            if (part == null)
+            {
+                continue;
+            }
 
             foreach (string tag in part.tags)
             {

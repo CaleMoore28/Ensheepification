@@ -23,6 +23,8 @@ public class SheepManager : MonoBehaviour, Interactable
 
     [SerializeField] private BoxCollider boxCollider;
 
+    [SerializeField] private GameObject sheepResetOffset;
+
     private void Start()
     {
         boxCollider.enabled = false;
@@ -71,6 +73,13 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             PartData bodyPartData = bodyPart.GetComponent<PartManager>().partDataScriptableObject;
 
+            Debug.Log("BodyPartData is " + bodyPartData);
+
+            if (bodyPartData == null)
+            {
+                continue;
+            }
+
             //Head
             if (bodyPartData.attribute == Attribute.HEAD)
             {
@@ -88,7 +97,7 @@ public class SheepManager : MonoBehaviour, Interactable
             }
         }
 
-        if (necessaryPartCounter == 3)
+        if (necessaryPartCounter >= 3)
         {
             ReadyToCook();
         }
@@ -126,5 +135,8 @@ public class SheepManager : MonoBehaviour, Interactable
         spin.hasChangedSpinState = false;
 
         gameObject.transform.localScale = Vector3.one;
+
+        transform.parent = null;
+        transform.position = sheepResetOffset.transform.position;
     }
 }

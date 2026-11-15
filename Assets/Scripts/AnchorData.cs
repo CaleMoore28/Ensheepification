@@ -23,19 +23,19 @@ public class AnchorData : MonoBehaviour
                 return null;
 
             // Head
-            case ((Attribute)0):
+            case (Attribute.HEAD):
                 return headAnchor;
 
             // Body
-            case ((Attribute)1):
+            case (Attribute.BODY):
                 return bodyAnchor;
 
             // Horns
-            case ((Attribute)2):
+            case (Attribute.HORNS):
                 return hornsAnchor;
 
             // Legs
-            case ((Attribute)3):
+            case (Attribute.LEGS):
                 return legsAnchor;
 
         }
