@@ -50,7 +50,9 @@ public class SheepManager : MonoBehaviour, Interactable
         {
             print("sheep child?");
             GameObject player = GameObject.FindWithTag("Player");
-            GameObject cameraPos = player.GetComponentInChildren<CinemachineCamera>().gameObject;
+            Debug.Log("Player object is " + player);
+            GameObject cameraPos = player.GetComponentInChildren<Testing>().gameObject;
+            Debug.Log("cameraPos " + cameraPos);
             transform.parent = cameraPos.transform;
             //transform.parent = player.transform;
         }
@@ -137,12 +139,9 @@ public class SheepManager : MonoBehaviour, Interactable
         spinningEnabled = true;
         spin.hasChangedSpinState = false;
 
-        transform.parent = null;
-
         gameObject.transform.localScale = Vector3.one;
 
         transform.parent = null;
         transform.position = sheepResetOffset.transform.position;
-        this.gameObject.layer = 6;
     }
 }
