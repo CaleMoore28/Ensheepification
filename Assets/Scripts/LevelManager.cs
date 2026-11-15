@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour
         shiftManager.OnShiftOver -= OnShiftOver;
 
         reportHandler.ShowScoreReport();
-        if (day != 3){
+        if (day <= 3){
             reportHandler.OnLevelAdvance += ProgressDay;
         }else{
             GameManager.Instance.MountScene("FinalCutscene");
@@ -78,6 +78,7 @@ public class LevelManager : MonoBehaviour
     private void ProgressDay()
     {
         day++;
+        reportHandler.OnLevelAdvance -= ProgressDay;
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
     }
