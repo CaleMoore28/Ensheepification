@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
         shiftManager.StartShift();
         ticketManager.SetDay(day);
 
-    
+        CheckCorruption();
     }
     
 

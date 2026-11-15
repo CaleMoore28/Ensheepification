@@ -6,6 +6,9 @@ public class TableInteract : MonoBehaviour, Interactable
     [SerializeField] private CinemachineCamera playerCamera;
     [SerializeField] private CinemachineCamera tableCamera;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerAtTablePosition;
+
     PlayerController playerController;
 
     public void Interact(PlayerController _playerController)
@@ -18,6 +21,8 @@ public class TableInteract : MonoBehaviour, Interactable
         playerController.ToggleMovement(false);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        player.transform.position = playerAtTablePosition.transform.position;
     }
 
     public void EscapeTable()

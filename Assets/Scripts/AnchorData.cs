@@ -38,6 +38,14 @@ public class AnchorData : MonoBehaviour
             case (Attribute.LEGS):
                 return legsAnchor;
 
+            // Legs
+            case (Attribute.TAIL):
+                return tailAnchor;
+
+            // Wings
+            case (Attribute.WINGS):
+                return wingsAnchor;
+
         }
     }
 }
