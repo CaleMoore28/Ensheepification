@@ -10,7 +10,7 @@ public class AnnouncementHandler : MonoBehaviour
 
     private void Start()
     {
-        announcementPanel.SetActive(false);
+        //announcementPanel.SetActive(false);
     }
 
     public void ShowAnnouncement(int day)
