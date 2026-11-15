@@ -7,7 +7,14 @@ public class TicketManager : MonoBehaviour
 {
     [SerializeField] private TicketDisplay ticketDisplay;
     [Header("Tickets By Day")]
-    [SerializeField] private object[,] dayOneTickets;
+
+    // format is prompt, attribute number, tag number
+    [SerializeField] private object[,] dayOneTickets =
+    {
+        {"Prompt 1: $tag", 0, 1},
+        {"Prompt 2: $attribute", 1, 0},
+        {"Prompt 1: $attribute $tag", 1, 1},
+    };
     [SerializeField] private object[,] dayTwoTickets;
     [SerializeField] object[,] dayThreeTickets;
 
@@ -19,15 +26,9 @@ public class TicketManager : MonoBehaviour
 
     public Action OnAllTicketsFinished;
 
-
-    private void Start()
-    {
-        satisfactionHandler = GetComponent<SatisfactionHandler>();
-    }
-
-
     public void SetDay(int day)
     {
+        promptGenerator.promptOptions = SetTicketQueue(day);
         promptGenerator.GenerateTicket();
         ticketDisplay.DisplayTicketData(currentTicket);
     }
@@ -35,10 +36,11 @@ public class TicketManager : MonoBehaviour
     public void NextTicket()
     {  
         promptGenerator.GenerateTicket();
+        ticketDisplay.DisplayTicketData(currentTicket);
     }
 
 
-    private object[,] GetTicketQueue(int day)
+    private object[,] SetTicketQueue(int day)
     {
         if (day == 1)
         {

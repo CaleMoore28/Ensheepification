@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     {
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
+        StartDay();
     }
 
     private void StartDay()

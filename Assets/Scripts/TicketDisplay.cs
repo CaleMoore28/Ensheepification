@@ -17,5 +17,6 @@ public class TicketDisplay : MonoBehaviour
         if (ticketData){    
             ticketText.text = ticketData.prompt;
         }
+        print($"ticket prompt currently:{ticketText.text}");
     }
 }

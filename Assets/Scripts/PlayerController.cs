@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Vector2 mouseDelta;
 
-    private const float INTERACT_DISTANCE = 1.0f;
+    private const float INTERACT_DISTANCE = 3.0f;
 
     private Rigidbody playerRigidbody;
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract()
     {
-        Debug.Log("Interacting!");
+        // Debug.Log("Interacting!");
 
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit raycastHit, 
             INTERACT_DISTANCE, interactableLayer))

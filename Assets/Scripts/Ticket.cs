@@ -7,10 +7,6 @@ using System.Collections.Generic;
 public class Ticket : MonoBehaviour
 {
 
-    [SerializeField] private GameObject ticketPanel;
-
-    [SerializeField] private TextMeshProUGUI promptText;
-
     private string[] attributes = {"horns", "head", "body", "tail"};
 
     private string[] tags = {"cute", "evil", "basic", "fluffy"};
@@ -35,7 +31,10 @@ public class Ticket : MonoBehaviour
 
     public void LoadText(object text, object attributeCount, object tagCount)
     {
+        prompt = null;
         prompt = text.ToString(); 
+        requiredAttributes = new List<string>();
+        requiredTags = new List<string>();
 
         for (int i = 0; i < (int) attributeCount; i++) 
         {
@@ -52,7 +51,6 @@ public class Ticket : MonoBehaviour
 
            
         }
-        promptText.text=  prompt;
 
     }
 }

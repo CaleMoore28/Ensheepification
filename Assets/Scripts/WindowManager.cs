@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindowManager : MonoBehaviour
+public class WindowManager : MonoBehaviour, Interactable
 {
     [SerializeField] private TicketManager ticketManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -11,7 +11,6 @@ public class WindowManager : MonoBehaviour
         GameObject sheep = player.transform.GetChild(1).gameObject;
         if (sheep){
             SheepManager sheepScript = sheep.GetComponent<SheepManager>();
-            print("byebye sheep");
             ticketManager.EvaluateTicket(sheepScript.bodyPartsList);
             sheepScript.ResetSheep();
         }

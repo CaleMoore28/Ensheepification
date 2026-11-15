@@ -4,7 +4,7 @@ using UnityEngine;
 public class PromptOptions : ScriptableObject
 {
     [TextArea]
-
+    //POSSIBLE USELESS fILE
     // format is prompt, attribute number, tag number
     public object[,] dialogue = {
         {"SheepGPT, generate me a sheep with $attribute that is also $tag.", 1, 1}, 
