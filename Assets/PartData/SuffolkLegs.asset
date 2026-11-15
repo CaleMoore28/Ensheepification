@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239b0de194e0be14bb815a62bcd5e3ec, type: 3}
+  m_Name: SuffolkLegs
+  m_EditorClassIdentifier: Assembly-CSharp::PartData
+  partName: legs_suffolk
+  cost: 15
+  uiIcon: {fileID: 0}
+  partPrefab: {fileID: 2539971472340520135, guid: 7286967484cb3e34282a2decb84f8c81, type: 3}
+  attribute: 3
+  tags:
+  - Basic

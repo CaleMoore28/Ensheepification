@@ -6,17 +6,22 @@ public class SheepManager : MonoBehaviour, Interactable
 {
     [Header("Dependencies")]
     [SerializeField] private AnchorData anchorData;
+    [SerializeField] private TableInteract tableInteract;
 
     public GameObject testData;
 
     private bool complete;
 
+    [SerializeField] private List<GameObject> bodyPartsList;
+
+    private bool cookable = false;
+
     public void Interact(PlayerController _playerController)
     {
         print("interact with sheep");
-        complete = true;
         //TODO Remove Line
-        if (complete){
+        if (cookable)
+        {
             print("sheep child?");
             GameObject player = GameObject.FindWithTag("Player");
             transform.parent = player.transform;
@@ -24,29 +29,33 @@ public class SheepManager : MonoBehaviour, Interactable
         this.gameObject.layer = default;
     }
 
-    [SerializeField] private List<GameObject> bodyPartsList;
-
-    private bool cookable = false;
-
-
     public void AddPart(PartData partData)
     {
         GameObject anchor = anchorData.getAnchorObject(partData.attribute);
 
         GameObject partPrefab = partData.partPrefab;
 
-        GameObject oldPart = anchor.GetComponentInChildren<Transform>().gameObject;
-        
+        GameObject oldPart = null;
+        try
+        {
+            oldPart = anchor.GetComponentInChildren<PartManager>().gameObject;
+        }
+        catch { }
+
+        Debug.Log(oldPart);
+
+        if (oldPart == null)
+        {
+            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
+            bodyPartsList.Add(newPart);
+        }
+
         if (oldPart != null)
         {
             bodyPartsList.Remove(oldPart);
             Destroy(oldPart);
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
-            bodyPartsList.Add(newPart);
-        }
-        else
-        {
-            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.identity, anchor.transform);
+            
+            GameObject newPart = Instantiate(partPrefab, anchor.transform.position, Quaternion.Euler(-90f, 0f, 0f), anchor.transform);
             bodyPartsList.Add(newPart);
         }
     }
@@ -85,6 +94,7 @@ public class SheepManager : MonoBehaviour, Interactable
     private void ReadyToCook()
     {
         cookable = true;
+        tableInteract.EscapeTable();
     }
 
     public void ResetSheep()
