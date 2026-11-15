@@ -32,7 +32,6 @@ public class LevelManager : MonoBehaviour
     {
         announcementHandler.ShowAnnouncement(day);
         announcementHandler.OnAnnouncementAcknowledged += StartDay;
-        StartDay();
     }
 
     private void StartDay()
@@ -41,8 +40,8 @@ public class LevelManager : MonoBehaviour
 
         moneyManager.OnBankrupt += OnBankrupt;
         shiftManager.OnShiftOver += OnShiftOver;
-        
 
+        playerController.ToggleMovement(true);
         hud.SetDay(day);
 
         hud.ToggleHud(true);

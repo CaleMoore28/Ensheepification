@@ -8161,6 +8161,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TicketManager
   ticketDisplay: {fileID: 763563408}
+  tags:
+  - cute
+  - evil
+  - basic
+  - fluffy
+  - chill
+  - fantastical
+  - old-fashioned
+  - baazarrre
+  - hdkjdkfjejufiop
+  - Quirked Up White Boy
   currentTicket: {fileID: 1869222928}
   satisfactionHandler: {fileID: 911708124}
   promptGenerator: {fileID: 134655570}
@@ -12716,9 +12727,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3340315585725079326, guid: d598f22dfb1c71d458cb816e0d58a0f3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 3340315585725079326, guid: d598f22dfb1c71d458cb816e0d58a0f3, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8984472603865893244, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 6592304483318193238, guid: d598f22dfb1c71d458cb816e0d58a0f3, type: 3}
       propertyPath: m_sharedMaterial
       value: 
