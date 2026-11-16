@@ -14,7 +14,7 @@ public class TicketManager : MonoBehaviour
     [SerializeField] private object[,] dayOneTickets =
     {
         {"Doll-E, give me a sheep with a $tag $attribute.", 1, 1},      
-        {"PROMPT: Generate a sheep with $attribute attribute and $tag tag", 1, 1},
+        {"PROMPT: Generate a $tag sheep with $attribute", 1, 1},
         {"Generate me a sheep that is $tag enough for me to hang with after a long day.!", 0, 1},
     };
     [SerializeField] private object[,] dayTwoTickets=
