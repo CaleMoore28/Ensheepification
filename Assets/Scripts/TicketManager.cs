@@ -40,7 +40,7 @@ public class TicketManager : MonoBehaviour
     {
         {"dollee i need a sheep with roguelike elements and make it $tag and and spit on it.", 0, 1},
         {"square root of 23 @Doll-E", 0, 0},
-        {"my bf HATED THE LAST SHEEP I GAVE HIM WTF!! I need a new one pleaseeee @doll-e and im sorry if I called you grok. OMFG just give me a sheep with a $tag $attribute like im literally shaking and crying rn", 1, 1},
+        {"my bf HATED THE LAST SHEEP I GAVE HIM WTF!! I need a new one pleaseee @doll-e and im sorry if I called you grok. OMFG just give me a sheep with a $tag $attribute like im literally shaking and crying rn", 1, 1},
         {"@Doll-E whats a good sheep to dump my girlfriend with? how about a $tag sheep.", 0, 1},
         {"Vreau o oaie drăguță și foarte $tag care este $attribute.", 1, 1},
         {"HEY SHEEPCORP, don't you know what you're doing here is DISGUSTING?? do NOT 'generate' me a sheep, you are an EVIL corporation and you need to be TAKEN DOWN!!! BOYCOTT SHEEPCORP AND DOLL-E EVERYONE", 0, 0},

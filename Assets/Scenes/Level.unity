@@ -774,6 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb03fbe835b7104c90274ec1ca17e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShiftManager
+  SHIFT_DURATION: 60
 --- !u!4 &203792467
 Transform:
   m_ObjectHideFlags: 0
@@ -5414,7 +5415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0056536, y: -0.27663}
+  m_AnchoredPosition: {x: -0.018, y: -0.27663}
   m_SizeDelta: {x: 0.5, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994392343
@@ -5437,8 +5438,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TIP: you always need a head, body, legs, and horns before generating the
-    usable sheep!'
+  m_text: 'TIP: you always need a Head, Body, and Legs before you can click "Generate"!
+    Horns are optional.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
   m_sharedMaterial: {fileID: 8984472603865893244, guid: 47066e1ab1c366a4b8adf0abc33d87af, type: 2}
@@ -5504,7 +5505,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.013587967, y: 0, z: -0.09579965, w: -0.077548094}
+  m_margin: {x: -0.013587967, y: 0, z: -0.16394874, w: -0.077548094}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
