@@ -7,9 +7,11 @@ using System.Collections.Generic;
 public class Ticket : MonoBehaviour
 {
 
-    private string[] attributes = {"horns", "wings", "tail"};
+    //private string[] attributes = {"horns", "wings", "tail"};
+    private string[] attributes = {"horns", "body", "head", "legs"};
 
-    private string[] tags = {"cute", "evil", "basic", "fluffy"};
+    //private string[] tags = {"cute", "evil", "basic", "fluffy"};
+    private string[] tags = {"cute", "evil", "basic", "fluffy", "ugly", "quirky", "creepy", "beautiful", "majestic", "baazarre", "weird", "idk", "eldritch", "sjdhsfhsd", "quirked up white boy"};
 
     public List<string> requiredAttributes = new List<string>();
     public List<string> requiredTags  = new List<string>();
