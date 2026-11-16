@@ -7,7 +7,7 @@ public class ShiftManager : MonoBehaviour
     public float ShiftTime { get { return shiftTime; } }
     public float ShiftTimeAsProportion { get { return Mathf.Clamp(shiftTime / SHIFT_DURATION, 0.0f, 1.0f); } }
 
-    private const float SHIFT_DURATION = 90.0f;
+    private const float SHIFT_DURATION = 75.0f;
 
     public Action OnShiftOver;
 
