@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Ensheepification
-  defaultCursor: {fileID: 2800000, guid: 821352b4f210e6749bfe834c1f3bc63a, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 18d1733d8acdb354896654b0c398b6c0, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
